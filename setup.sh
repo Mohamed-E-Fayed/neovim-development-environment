@@ -38,7 +38,7 @@ nvim +PlugInstall +qa  # install plugins
 pip install  -r requirements/python.txt
 
 # 2. bash
-pip install requirements/bash.txt
+pip install -r requirements/bash.txt
 # I just mention the below code here since it is related to current context
 # But it is called at the beginning for convenience of usage.
 # if ! test -e /usr/loca/go ; then
@@ -46,3 +46,5 @@ pip install requirements/bash.txt
 # else
 #     echo warning: skipping installing go language. However, shfmt requires go >= 1.19.
 # fi
+go install mvdan.cc/sh/v3/cmd/shfmt@latest
+
