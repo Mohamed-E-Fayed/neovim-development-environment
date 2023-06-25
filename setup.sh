@@ -12,10 +12,14 @@
 sudo apt install neovim
 # install go lang which is required to install some linters
 if ! test -e /usr/loca/go ; then
-    sudo apt-get install -y golang-go
+    # sudo apt-get install -y golang-go  # not suitable because it install 1.13
+    wget https://go.dev/dl/go1.20.5.linux-amd64.tar.gz
+    sudo     tar -C /usr/local -xzf go1.20.5.linux-amd64.tar.gz
 else
-    echo warning: skipping installing go language. However, shfmt requires go >= 1.19.
+    echo warning: skipping installing go language.
+    echo However, shfmt requires go >= 1.19.
 fi
+sudo apt install shellcheck  # for shell linting
 
 
 # prepare neovim
@@ -35,6 +39,7 @@ nvim +PlugInstall +qa  # install plugins
 
 # Install required language servers to work with ALE
 # 1. python LSPs
+# note: refurb can not be installed on ubuntu, but is installable on mac os!
 pip install  -r requirements/python.txt
 
 # 2. bash
