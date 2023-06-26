@@ -51,6 +51,11 @@ Plug 'yegappan/taglist'
   Plug 'jiangmiao/auto-pairs'
   Plug 'wellle/targets.vim'
   Plug 'machakann/vim-sandwich'
+
+    " Plugin to get the cursor back to position just before closing the file
+  " intelligently
+  Plug 'farmergreg/vim-lastplace'
+
 call plug#end()
 
 " CONFIGURATION
